@@ -75,7 +75,7 @@ jobs:
       run: |
         zip -r -y Subsurface.app.zip Subsurface.app	  
         mkdir -p Mac-artifacts
-		    mv ./Subsurface.app.zip Mac-artifacts		
+        mv ./Subsurface.app.zip Mac-artifacts		
 
     - name: PR artifacts
       if: github.event_name == 'pull_request'
@@ -83,5 +83,3 @@ jobs:
       with:
         name: Mac-artifacts
         path: Mac-artifacts
-	
-

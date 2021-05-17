@@ -69,7 +69,6 @@ jobs:
         cd ${GITHUB_WORKSPACE}/build/tests
         # ./TestGitStorage -v2
         make check
-		
 
     - name: prepare PR artifacts
       if: github.event_name == 'pull_request'

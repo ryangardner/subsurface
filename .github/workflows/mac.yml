@@ -131,29 +131,6 @@ jobs:
         cd ${GITHUB_WORKSPACE}/build/tests
         # ./TestGitStorage -v2
         make check
-
-    - name: prepare PR artifacts
-      if: github.event_name == 'pull_request'
-      run: |
-        zip -r -y Subsurface.app.zip Subsurface.app	  
-        mkdir -p Mac-artifacts
-        mv ./Subsurface.app.zip Mac-artifacts		
-
-    - name: PR artifacts
-      if: github.event_name == 'pull_request'
-      uses: actions/upload-artifact@master
-      with:
-        name: Mac-artifacts
-        path: Mac-artifacts
-
-      run: |
-        echo "------------------------------------"
-        echo "run tests for desktop build"
-        export QT_ROOT=${GITHUB_WORKSPACE}/Qt/5.13.0/clang_64
-        export QT_QPA_PLATFORM_PLUGIN_PATH=$QT_ROOT/plugins
-        cd ${GITHUB_WORKSPACE}/build/tests
-        # ./TestGitStorage -v2
-        make check
 		
 
     - name: prepare PR artifacts
@@ -171,4 +148,3 @@ jobs:
         name: Mac-artifacts
         path: Mac-artifacts
 	
-

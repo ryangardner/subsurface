@@ -9,7 +9,7 @@ on:
 
 jobs:
   buildMac:
-    runs-on: macOS-latest
+    runs-on: macos-latest
     steps:
     - name: checkout sources
       uses: actions/checkout@v1
